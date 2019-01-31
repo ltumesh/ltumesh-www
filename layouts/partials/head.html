@@ -7,7 +7,8 @@
 
 <base href="{{ .Site.BaseURL }}">
 
-<link rel="stylesheet" href="{{ "css/mesh.css" | absURL }}">
+{{ $css := resources.Get "css/mesh.css" | resources.Minify }}
+<link rel="stylesheet" href="{{ $css.Permalink }}">
 
 <link rel="canonical" href="{{ .Permalink }}">
 

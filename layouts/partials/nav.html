@@ -4,7 +4,8 @@
   <ul>
     <li>
       <a href="index.html">
-        <img src="/img/mesh-logo.svg" alt="LTU Mesh logotype">
+        {{ $svg := resources.Get "img/mesh-logo.svg" | resources.Minify }}
+        <img src="{{ $svg.Permalink }}" alt="LTU Mesh logotype">
       </a>
     </li>
     <li>
