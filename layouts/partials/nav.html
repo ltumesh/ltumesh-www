@@ -3,42 +3,28 @@
   <!-- Each item in the navigation bar is contained in a unordered list -->
   <ul>
     <li>
-      <a href="index.html">
+      <a href="/">
         {{ $svg := resources.Get "img/mesh-logo.svg" | resources.Minify }}
         <img src="{{ $svg.Permalink }}" alt="LTU Mesh logotype">
       </a>
     </li>
+    {{ range .Site.Menus.main }}
     <li>
-      <a href="connect.html">
-        Connect
+      <a href="{{ .URL }}">
+        {{ .Name }}
       </a>
-    </li>
-    <li>
-      <a href="map.html">
-        Map
-      </a>
-    </li>
-    <li>
-      <a href="events.html">
-        Events
-      </a>
-    </li>
-    <li>
-      <a href="about.html">
-        About
-      </a>
+      {{ if .HasChildren }}
       <ul>
-        <li>
-          <a href="contact.html">
-            Contact
-          </a>
-        </li>
-        <li>
-          <a href="history.html">
-            History
-          </a>
-        </li>
+      {{ range .Children }}
+      <li>
+        <a href="{{ .URL }}">
+          {{ .Name }}
+        </a>
+      </li>
+      {{ end }}
       </ul>
+      {{ end }}
     </li>
+    {{ end }}
   </ul>
 </nav>

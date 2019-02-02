@@ -2,3 +2,46 @@ baseurl = "https://ltumesh.github.io"
 languageCode = "en-us"
 title = "LTU Mesh"
 assetDir = "static"
+canonifyurls = true
+
+[params]
+    email = "hello@ltu.mesh"
+    street = "Docentvägen 20, LGH 1001"
+    city = "Luleå"
+    country = "Sweden"
+    zip = "977 52"
+
+[menu]
+[[menu.main]]
+    identifier = "connect"
+    name = "Connect"
+    url = "/connect/"
+    weight = 1
+
+[[menu.main]]
+    identifier = "map"
+    name = "Map"
+    url = "/map/"
+    weight = 2
+
+[[menu.main]]
+    identifier = "events"
+    name = "Events"
+    url = "/events/"
+    weight = 3
+
+[[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 4
+[[menu.main]]
+    parent = "about"
+    name = "History"
+    url = "/about/history/"
+    weight = 1
+[[menu.main]]
+    parent = "about"
+    name = "Contact"
+    url = "/about/contact/"
+    weight = 2
