@@ -25,7 +25,7 @@ Pastry gingerbread pastry danish halvah sweet muffin jelly. Macaroon cake
 icing halvah marshmallow applicake. Jelly-o cupcake lemon drops applicake
 macaroon donut.
 
-### Just like Internet, but...</h3>
+### Just like Internet, but...
 
 Fruitcake caramels dessert gingerbread. Cupcake caramels biscuit macaroon.
 Cookie fruitcake chocolate bar donut bonbon tiramisu cake croissant.
