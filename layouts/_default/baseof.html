@@ -5,10 +5,34 @@
     {{- partial "head.html" . -}}
   </head>
   <body>
-    <header>
-      {{- partial "nav.html" . -}}
-    </header>
-    {{- block "main" . }}{{- end }}
+    {{- partial "header.html" . -}}
+    {{ define "breadcrumb" }}
+      {{ if .currentPage.Parent }}
+        {{ if ne .currentPage.Parent .IsHome }}
+          {{ template "breadcrumb" dict "currentPage" .currentPage.Parent }}
+        {{ end }}
+        {{ if eq .id .currentPage.UniqueID }}
+          <li>{{ .currentPage.Title }}</li>
+        {{ else }}
+          <li><a href="{{ .currentPage.URL }}">{{ .currentPage.Title }}</a></li>
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
+    <main>
+      <ol class="breadcrumb">
+        {{ if .IsHome }}
+        <li>Home</li>
+        {{ else }}
+        <li><a href="/">Home</a></li>
+        {{ end }}
+        {{ template "breadcrumb" dict "currentPage" .Page "id" .UniqueID }}
+      </ol>
+
+      <section>
+        {{ block "content" . }}{{- end }}
+      </section>
+    </main>
     {{- partial "footer.html" . -}}
   </body>
 </html>
