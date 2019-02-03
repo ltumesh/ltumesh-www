@@ -3,7 +3,7 @@
   <!-- Logotype -->
   <a href="/">
     {{ $svg := resources.Get "img/mesh-logo.svg" | resources.Minify }}
-    <img src="{{ $svg.Permalink }}" alt="LTU Mesh logotype">
+    <img src="{{- $svg.Permalink -}}" alt="LTU Mesh logotype">
   </a>
 
   <!-- Hamburger menu that is only displayed on mobile devices -->
