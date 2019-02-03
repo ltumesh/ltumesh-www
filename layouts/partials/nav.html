@@ -1,13 +1,19 @@
 <!-- nav holds the top navigation bar -->
 <nav>
+  <!-- Logotype -->
+  <a href="/">
+    {{ $svg := resources.Get "img/mesh-logo.svg" | resources.Minify }}
+    <img src="{{ $svg.Permalink }}" alt="LTU Mesh logotype">
+  </a>
+
+  <!-- Hamburger menu that is only displayed on mobile devices -->
+  <input type="checkbox">
+  <span></span>
+  <span></span>
+  <span></span>
+
   <!-- Each item in the navigation bar is contained in a unordered list -->
   <ul>
-    <li>
-      <a href="/">
-        {{ $svg := resources.Get "img/mesh-logo.svg" | resources.Minify }}
-        <img src="{{ $svg.Permalink }}" alt="LTU Mesh logotype">
-      </a>
-    </li>
     {{ range .Site.Menus.main }}
     <li>
       <a href="{{ .URL }}">
