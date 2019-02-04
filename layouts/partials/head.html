@@ -5,8 +5,13 @@
 {{ with .Site.Params.description }}<meta name="description" content="{{ block "description" . }}{{ . }}{{ end }}">{{ end }}
 {{ with .Site.Params.keywords }}<meta name="keywords" content="{{ . }}">{{ end }}
 
+<!-- -->
 {{ $css := resources.Get "css/mesh.css" | resources.Minify }}
 <link rel="stylesheet" href="{{ $css.Permalink }}">
+<!-- -->
+<!--
+<link rel="stylesheet" href="/css/mesh.css">
+-->
 
 <link rel="canonical" href="{{ .Permalink }}">
 
